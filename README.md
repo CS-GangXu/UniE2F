@@ -1,24 +1,25 @@
-## Overview
+[video demo.webm](https://github.com/user-attachments/assets/76eddfe0-8c3c-4b18-b24a-eab950ff3763)
+
+### Overview
 
 This repository contains the official implementation of **UniE2F**, a unified diffusion framework for **Event-to-Frame reconstruction** with video foundation models. Given a stream of events, UniE2F reconstructs high-fidelity RGB video frames, and further supports **zero-shot video frame interpolation and prediction** by modulating the reverse diffusion sampling process.
 
-**Paper:**  
+### Paper
+
 **UniE2F: A Unified Diffusion Framework for Event-to-Frame Reconstruction with Video Foundation Models**  
 Gang Xu†, Zhiyu Zhu†, Junhui Hou*  
 (*† equal contribution*)
 
 - PDF: [Paper](https://arxiv.org/abs/2602.19202)
 
-### Video Demo
-
-[video demo.webm](https://github.com/user-attachments/assets/76eddfe0-8c3c-4b18-b24a-eab950ff3763)
-
 ### Highlights
+
 - Leverages the generative prior of a pre-trained **Stable Video Diffusion (SVD)** model for event-to-frame reconstruction.
 - Introduces **event-based inter-frame residual guidance** to better align physical correlations between events and frame residuals.
 - Extends to **interpolation** and **prediction** in a **zero-shot** manner via reverse sampling modulation, forming a unified framework.
 
 ### Citation
+
 If you find this project useful, please consider citing:
 ```bibtex
 @article{xu202Xunie2f,
@@ -30,14 +31,15 @@ If you find this project useful, please consider citing:
   primaryClass  = {cs.CV},
   url           = {https://arxiv.org/abs/2602.19202}
 }
+```
 
-## Environment Setup
+### Environment Setup
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Dataset Format
+### Dataset Format
 
 The dataset should be organized as follows:
 
@@ -60,12 +62,12 @@ data/
     └── ...
 ```
 
-### Data Format Details
+#### Data Format Details
 
 - **RGB images**: JPG format, resolution 448x320
 - **Event data**: NPZ format with key `data`, shape (3, H, W), values in range [-N, N]
 
-## Pretrained Models
+### Pretrained Models
 
 Please download the following pretrained models and place them in the `pretrained/` directory:
 
@@ -74,21 +76,21 @@ Please download the following pretrained models and place them in the `pretraine
 
 After training, the UNet checkpoint will be saved to `checkpoints/unet_train_params.pth`.
 
-## Usage
+### Usage
 
-### Training
+#### Training
 
 ```bash
 python train.py --config configs/unie2f.yaml
 ```
 
-### Inference
+#### Inference
 
 ```bash
 python inference.py --config configs/unie2f.yaml
 ```
 
-### Evaluation
+#### Evaluation
 
 ```bash
 python evaluation.py --config configs/unie2f.yaml
@@ -100,7 +102,7 @@ Or run all steps with:
 bash run.sh
 ```
 
-## Configuration
+### Configuration
 
 Edit `configs/unie2f.yaml` to modify:
 - Data paths
