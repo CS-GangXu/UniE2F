@@ -11,6 +11,7 @@ Gang Xu†, Zhiyu Zhu†, Junhui Hou*
 
 ### Video Demo
 - Demo video: [video demo.webm](https://github.com/user-attachments/assets/76eddfe0-8c3c-4b18-b24a-eab950ff3763)
+[video demo.webm](https://github.com/user-attachments/assets/76eddfe0-8c3c-4b18-b24a-eab950ff3763)
 
 ### Highlights
 - Leverages the generative prior of a pre-trained **Stable Video Diffusion (SVD)** model for event-to-frame reconstruction.
