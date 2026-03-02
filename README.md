@@ -10,7 +10,7 @@ Gang Xu†, Zhiyu Zhu†, Junhui Hou*
 - PDF: [Paper](https://arxiv.org/abs/2602.19202)
 
 ### Video Demo
-- Demo video: [video demo.webm](https://github.com/user-attachments/assets/76eddfe0-8c3c-4b18-b24a-eab950ff3763)
+
 [video demo.webm](https://github.com/user-attachments/assets/76eddfe0-8c3c-4b18-b24a-eab950ff3763)
 
 ### Highlights
