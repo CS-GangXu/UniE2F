@@ -1,0 +1,58 @@
+version: 000
+
+data:
+  width: 448
+  height: 320
+  event_num: 12
+  train_folder_path: 'data/train'
+  test_folder_path: 'data/test'
+  train_batch_size: 1
+  test_batch_size: 1
+  random_crop_height: 320
+  random_crop_width: 448
+  img_format: 'jpg'
+  event_suffix: 'event_corrected'
+  condition:
+  - name: 'N-E-N'
+    min_guidance_scale: 1.5
+    max_guidance_scale: 1.5
+
+network:
+- name: 'vae_event'
+  pretrained_path: 'pretrained/vae_event.pth'
+  trainable: False
+  scaling_factor: 0.18215
+- name: 'vae_rgb'
+  pretrained_path: ''
+  trainable: False
+  scaling_factor: 0.18215
+- name: 'vae_rgb_fp16'
+  pretrained_path: ''
+  trainable: False
+  scaling_factor: 0.18215
+- name: 'resnet'
+  pretrained_path: 'pretrained/resnet.pth'
+  trainable: False
+  intermediate_layer_num: 10
+  intermediate_layer_channels: 256
+  input_channels: 3
+  output_channels: 3
+
+train:
+  pipeline:
+    name: 'default'
+    criterion:
+    - name: 'l2_loss'
+      lambda: 1.0
+
+inference:
+  pipeline:
+    name: 'image_space_customized_guidence_from_support'
+    guidence_t_idx: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+    support_type: 'event'
+    windows_size: 999
+    learning_rate_strategy: 'linear'
+    learning_rate_start: 0.1000
+    learning_rate_end: 0.0000
+    backward_num: 1
+  unet_param_path: 'checkpoints/unet_train_params.pth'

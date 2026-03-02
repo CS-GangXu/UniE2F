@@ -1,0 +1,15 @@
+torch>=2.0.0
+torchvision
+transformers
+accelerate
+omegaconf
+einops
+lpips
+pytorch-fid
+scikit-image
+opencv-python
+Pillow
+tqdm
+huggingface_hub
+packaging
+fvcore
