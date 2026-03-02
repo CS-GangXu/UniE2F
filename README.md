@@ -1,8 +1,34 @@
-# Event-based Novel View Synthesis using Stable Video Diffusion
+## Overview
 
-This repository contains the official implementation of our paper on event-based novel view synthesis using Stable Video Diffusion (SVD).
+This repository contains the official implementation of **UniE2F**, a unified diffusion framework for **Event-to-Frame reconstruction** with video foundation models. Given a stream of events, UniE2F reconstructs high-fidelity RGB video frames, and further supports **zero-shot video frame interpolation and prediction** by modulating the reverse diffusion sampling process.
 
-[video demo.webm](https://github.com/user-attachments/assets/76eddfe0-8c3c-4b18-b24a-eab950ff3763)
+**Paper:**  
+**UniE2F: A Unified Diffusion Framework for Event-to-Frame Reconstruction with Video Foundation Models**  
+Gang Xu†, Zhiyu Zhu†, Junhui Hou*  
+(*† equal contribution*)
+
+- PDF: [Paper](https://arxiv.org/abs/2602.19202)
+
+### Video Demo
+- Demo video: [video demo.webm](https://github.com/user-attachments/assets/76eddfe0-8c3c-4b18-b24a-eab950ff3763)
+
+### Highlights
+- Leverages the generative prior of a pre-trained **Stable Video Diffusion (SVD)** model for event-to-frame reconstruction.
+- Introduces **event-based inter-frame residual guidance** to better align physical correlations between events and frame residuals.
+- Extends to **interpolation** and **prediction** in a **zero-shot** manner via reverse sampling modulation, forming a unified framework.
+
+### Citation
+If you find this project useful, please consider citing:
+```bibtex
+@article{xu202Xunie2f,
+  title         = {UniE2F: A Unified Diffusion Framework for Event-to-Frame Reconstruction with Video Foundation Models},
+  author        = {Xu, Gang and Zhu, Zhiyu and Hou, Junhui},
+  year          = {2026},
+  eprint        = {2602.19202},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2602.19202}
+}
 
 ## Environment Setup
 
