@@ -54,13 +54,13 @@ Please download the [pretrained models](https://pan.baidu.com/s/1HfE0EMj0kcjYcep
 
 ```bash
 # Video Frame Reconstruction
-python inference.py --config configs/vfr.yaml
+python inference.py --config exp/vfr.yaml
 
 # Video Frame Interpolation
-python inference.py --config configs/vfi.yaml
+python inference.py --config exp/vfi.yaml
 
 # Video Frame Prediction
-python inference.py --config configs/vfp.yaml
+python inference.py --config exp/vfp.yaml
 ```
 
 ## License
