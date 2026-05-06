@@ -3,11 +3,11 @@
 # Set GPU device
 CUDA_VISIBLE_DEVICES=0
 
-# Train
-python train.py --config configs/base.yaml
-
-# Inference
+# Video Frame Reconstruction
 python inference.py --config configs/vfr.yaml
 
-# Evaluation
-python evaluation.py --config configs/vfr.yaml
+# Video Frame Interpolation
+python inference.py --config configs/vfi.yaml
+
+# Video Frame Prediction
+python inference.py --config configs/vfp.yaml
