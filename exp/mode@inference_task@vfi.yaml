@@ -4,8 +4,8 @@ data:
   width: 448
   height: 320
   event_num: 12
-  train_folder_path: ''
-  test_folder_path: 'data'
+  train_folder_path: 'data.train'
+  test_folder_path: 'data.test'
   train_batch_size: 1
   test_batch_size: 1
   random_crop_height: 320
@@ -56,5 +56,5 @@ inference:
     learning_rate_start: 0.1000
     learning_rate_end: 0.0000
     backward_num: 1
-    reference_mode: 'vfp'
+    reference_mode: 'vfi'
   unet_param_path: 'parameter/unet.pth'

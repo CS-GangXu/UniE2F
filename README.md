@@ -23,7 +23,7 @@ pip install -r requirements.txt
 The dataset should be organized as follows:
 
 ```
-data/
+data.{train/test}/
 ├── scene_001/
 │   ├── rgb/
 │   │   ├── 000001.jpg
@@ -50,17 +50,24 @@ Please download the [pretrained models](https://pan.baidu.com/s/1HfE0EMj0kcjYcep
 2. **resnet.pth**: ResNet model for residual prediction
 3. **unet.pth**: U-Net model for denoising
 
+## Train
+
+```bash
+# Video Frame Reconstruction
+python train.py --config exp/mode@train_task@vfr.yaml
+```
+
 ## Inference
 
 ```bash
 # Video Frame Reconstruction
-python inference.py --config configs/vfr.yaml
+python inference.py --config exp/mode@inference_task@vfr.yaml
 
 # Video Frame Interpolation
-python inference.py --config configs/vfi.yaml
+python inference.py --config exp/mode@inference_task@vfi.yaml
 
 # Video Frame Prediction
-python inference.py --config configs/vfp.yaml
+python inference.py --config exp/mode@inference_task@vfp.yaml
 ```
 
 ## License
